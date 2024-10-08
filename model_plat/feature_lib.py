@@ -130,18 +130,23 @@ def calculate_psi(expected, actual, buckettype='bins', bins=10, axis=0, eps=1e-6
         psi_value = sum(sub_psi(expected_fractions[i], actual_fractions[i]) for i in range(0, len(expected_fractions)))
 
         return psi_value
+    try:
+        if len(expected.shape) == 1:
+            psi_values = np.empty(len(expected.shape))
+        else:
+            psi_values = np.empty(expected.shape[1 - axis])
 
-    if len(expected.shape) == 1:
-        psi_values = np.empty(len(expected.shape))
-    else:
-        psi_values = np.empty(expected.shape[1 - axis])
+        for i in range(0, len(psi_values)):
+            if len(psi_values) == 1:
+                psi_values = psi(expected, actual, bins)
+            elif axis == 0:
+                psi_values[i] = psi(expected[:, i], actual[:, i], bins)
+            elif axis == 1:
+                psi_values[i] = psi(expected[i, :], actual[i, :], bins)
+        print("-----", psi_values)
+        return psi_values
 
-    for i in range(0, len(psi_values)):
-        if len(psi_values) == 1:
-            psi_values = psi(expected, actual, bins)
-        elif axis == 0:
-            psi_values[i] = psi(expected[:, i], actual[:, i], bins)
-        elif axis == 1:
-            psi_values[i] = psi(expected[i, :], actual[i, :], bins)
 
-    return psi_values
+    except Exception as e:
+        print(f"未知异常捕获{e}")
+        return 0
