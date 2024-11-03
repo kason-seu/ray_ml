@@ -1,5 +1,5 @@
 
-from model_plat.utils import partition_list
+from model_plat.feature.utils import partition_list
 
 
 if __name__ == '__main__':

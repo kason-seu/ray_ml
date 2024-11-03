@@ -2,7 +2,7 @@ import time
 
 import pandas as pd
 import numpy as np
-from model_plat.feature_lib import calculate_psi, calculate_psi_v2, calculate_psi_bydf
+from model_plat.feature.feature_lib import calculate_psi, calculate_psi_v2, calculate_psi_bydf
 
 # 生成模拟的训练样本评分和测试样本评分
 # np.random.seed(0)

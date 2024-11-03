@@ -4,11 +4,11 @@ from typing import Tuple, List, Any
 import time
 import ray
 import logging
-from model_plat.utils import partition_list
-from model_plat.feature_lib import calculate_woe_iv_by_single_feature
-from model_plat.feature_engine.feature_abstract import FeatureProcess
+from feature.utils import partition_list
+from feature.feature_lib import calculate_woe_iv_by_single_feature
+from feature.feature_abstract import FeatureProcess
 
-ray.init(ignore_reinit_error=True)
+ray.init()
 job_id = ray.get_runtime_context().get_job_id
 print(f"ray feature process job_id={job_id}")
 
@@ -131,7 +131,7 @@ class FeatureHandler(FeatureProcess):
 start = time.time()
 columns = None
 train_partitions = ["data/d1_one.csv", "data/d1_two.csv", "data/d1_three.csv"]
-path = os.path.abspath("..")
+path = os.path.abspath("")
 feature_handler_actors = [
     FeatureHandler.remote(partition=os.path.join(path, partition), feature_columns=None, label_col='target')
     for partition in
