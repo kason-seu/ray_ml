@@ -10,41 +10,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/model_plat/data/m1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/model_plat/data/m2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/model_plat/data/ppd/PPD_LogInfo_3_1_Training_Set.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/model_plat/data/ppd/PPD_Training_Master_GBK_3_1_Training_Set.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/model_plat/data/ppd/PPD_Userupdate_Info_3_1_Training_Set.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/xgboost_work/validation_data.csv">
           <value>
             <Attribute>
